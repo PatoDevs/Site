@@ -1,0 +1,156 @@
+/* Pato Devs — estilos compartilhados (preto e branco, como a logo) */
+:root{--bg:#fff;--ink:#000;--muted:#555;--line:#000;
+--h:'Bricolage Grotesque','Trebuchet MS',sans-serif;--b:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#000;--ink:#fff;--muted:#aaa;--line:#fff}}
+:root[data-theme="dark"]{--bg:#000;--ink:#fff;--muted:#aaa;--line:#fff}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 18px/1.55 var(--b)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--ink);outline-offset:4px}
+
+/* troca de logo claro/escuro */
+.d{display:none}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) .l{display:none}:root:not([data-theme="light"]) .d{display:block}}
+:root[data-theme="dark"] .l{display:none}:root[data-theme="dark"] .d{display:block}
+
+.page{max-width:1120px;margin:0 auto;padding:0 24px 32px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.top img{height:38px;width:auto}
+.top nav{display:flex;gap:8px}
+.top nav a{text-decoration:none;font-weight:600;padding:8px 16px;border:2px solid transparent;border-radius:999px}
+.top nav a:hover,.top nav a[aria-current="page"]{border-color:var(--line)}
+
+/* ---------- início (convite) ---------- */
+.first{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;padding:28px 0 16px}
+.hero{flex:1;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:24px 0}
+h1{font:800 clamp(2.8rem,7.5vw,6rem)/.98 var(--h);letter-spacing:-.03em;margin:0 0 24px}
+.lead{font-size:clamp(1.1rem,2vw,1.35rem);max-width:34ch;margin:0 0 32px}
+.cta{display:inline-block;background:var(--ink);color:var(--bg);text-decoration:none;font-weight:600;font-size:1.1rem;padding:16px 30px;border-radius:999px;border:2px solid var(--ink);transition:background .15s,color .15s}
+.cta:hover{background:var(--bg);color:var(--ink)}
+.term{font:500 .95rem/1.4 ui-monospace,Menlo,Consolas,monospace;margin:22px 0 0;color:var(--muted)}
+.term i{display:inline-block;width:.6em;height:1.05em;background:var(--ink);vertical-align:-.15em;margin-left:3px;animation:blink 1s steps(1) infinite}
+.duck{position:relative;width:100%;max-width:440px;justify-self:center;transform:rotate(-4deg)}
+.duck>img{width:100%;height:auto}
+.ring{position:absolute;left:50%;bottom:4%;width:90%;aspect-ratio:3/1;border:2px solid var(--line);border-radius:50%;transform:translateX(-50%) scale(.5);opacity:0;z-index:-1;animation:rip 4s ease-out infinite}
+.ring:nth-child(2){animation-delay:1.3s}.ring:nth-child(3){animation-delay:2.6s}
+.down{align-self:center;display:grid;place-items:center;width:48px;height:48px;border:2px solid var(--line);border-radius:50%;color:var(--ink);text-decoration:none}
+.down svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.down:hover{background:var(--ink);color:var(--bg)}
+#convite{padding-top:48px}
+.ticket{display:flex;border:2px solid var(--line);border-radius:16px;margin:0 0 32px;transform:rotate(-1deg);transition:transform .2s;overflow:hidden}
+.ticket:hover{transform:rotate(0)}
+.stub{position:relative;padding:20px 28px;border-right:2px dashed var(--line);display:grid;place-items:center}
+.stub img{width:58px;height:auto}
+.stub::before,.stub::after{content:"";position:absolute;right:-13px;width:24px;height:24px;border-radius:50%;background:var(--bg);border:2px solid var(--line)}
+.stub::before{top:-13px}.stub::after{bottom:-13px}
+.tk{padding:20px 28px;display:flex;flex-direction:column;justify-content:center;gap:4px}
+.tk b{font:800 clamp(1.8rem,4.5vw,2.8rem)/1 var(--h);letter-spacing:-.02em}
+.tk span{color:var(--muted)}
+
+/* ---------- sobre + equipe ---------- */
+.sobre{padding:56px 0 24px}
+.sobre h1{font-size:clamp(2.4rem,6vw,4.5rem);max-width:14ch}
+.sobre h2{font:800 clamp(1.8rem,4vw,2.6rem)/1.1 var(--h);letter-spacing:-.02em;margin:64px 0 20px}
+.sobre .lead{max-width:48ch}
+ul.pilares{list-style:none;margin:0;padding:0;border-top:2px solid var(--line)}
+ul.pilares li{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:24px;padding:18px 0;border-bottom:2px solid var(--line);transition:background .15s,color .15s,padding .15s}
+ul.pilares li:hover{background:var(--ink);color:var(--bg);padding-left:16px;padding-right:16px}
+ul.pilares li:hover span{color:var(--bg)}
+ul.pilares b{font:800 1.4rem/1.2 var(--h)}
+ul.pilares span{color:var(--muted)}
+.equipe{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+.membro{border:2px solid var(--line);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:6px;transition:transform .2s}
+.membro:hover{transform:rotate(-1deg) translateY(-3px)}
+.foto{width:84px;height:84px;border-radius:50%;background:var(--ink);display:grid;place-items:center;margin-bottom:10px;overflow:hidden}
+.foto img{width:54px;height:auto}
+.membro b{font:800 1.2rem/1.2 var(--h)}
+.membro span{color:var(--muted);font-size:.95rem}
+.membro a{margin-top:6px;font-weight:600;font-size:.95rem}
+.fim{margin-top:64px;border:2px solid var(--line);border-radius:16px;padding:32px;display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center}
+.fim b{font:800 clamp(1.5rem,3.5vw,2.2rem)/1.1 var(--h)}
+.fim p{margin:8px 0 0;color:var(--muted);font-size:1rem;max-width:40ch}
+
+/* primeira tela do Sobre: ocupa a janela toda, então a equipe só aparece ao rolar */
+.first .sobre{flex:1;padding-top:40px}
+.first .sobre h2{margin-top:44px}
+.first .down{margin-top:24px}
+.sobre .lead{max-width:56ch}
+.sobre .intro{max-width:52ch;color:var(--muted);margin:0 0 28px}
+section.sobre{padding-top:72px;scroll-margin-top:16px}
+section.sobre h2{margin-top:0}
+
+footer{margin-top:48px;padding:0 0 8px;color:var(--muted);font-size:.85rem;text-align:center}
+
+/* botão flutuante do GitHub */
+.gh{position:fixed;right:max(20px,env(safe-area-inset-right,0px));bottom:calc(20px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;background:var(--ink);color:var(--bg);border:2px solid var(--bg);border-radius:999px;padding:12px;text-decoration:none;font-weight:600;box-shadow:0 0 0 2px var(--ink);z-index:10}
+.gh svg{width:28px;height:28px;fill:currentColor;flex:none}
+.gh span{max-width:0;overflow:hidden;white-space:nowrap;transition:max-width .25s,margin .25s}
+.gh:hover span,.gh:focus-visible span{max-width:140px;margin:0 8px 0 10px}
+
+@keyframes blink{50%{opacity:0}}
+@keyframes rip{0%{transform:translateX(-50%) scale(.5);opacity:.9}100%{transform:translateX(-50%) scale(1.25);opacity:0}}
+@keyframes bob{50%{transform:rotate(-4deg) translateY(-8px)}}
+@keyframes dn{50%{transform:translateY(4px)}}
+@media(prefers-reduced-motion:no-preference){.duck{animation:bob 4s ease-in-out infinite}.down svg{animation:dn 1.6s ease-in-out infinite}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ring,.term i{animation:none}.ring{opacity:.4;transform:translateX(-50%)}}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding:24px 0}.duck{max-width:260px;order:-1;justify-self:start}ul.pilares li{grid-template-columns:1fr;gap:4px}}
+@media(max-width:520px){.stub,.tk{padding:16px}.top nav a{padding:8px 10px}}
+
+/* ---------- Sessão de Equipe ---------- */
+
+/* Organiza a lista de membros em formato de grade automática */
+.equipe {
+  list-style: none;
+  padding: 0;
+  margin: 48px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 32px;
+}
+
+/* Centraliza os textos e elementos de cada membro */
+.membro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Cria o contêiner perfeito e redondo para a foto */
+.foto {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%; /* Deixa a foto perfeitamente redonda */
+  border: 2px solid var(--line); /* Adiciona a borda preta/branca do tema */
+  overflow: hidden; /* Corta o que sobrar da imagem */
+  margin-bottom: 16px;
+  background: var(--bg);
+}
+
+/* Garante que a imagem preencha o círculo sem distorcer */
+.foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ajusta a foto perfeitamente ao círculo */
+}
+
+/* Pequeno ajuste nos textos da equipe para seguir o design do site */
+.membro b {
+  font-family: var(--h);
+  font-size: 1.2rem;
+  display: block;
+}
+
+.membro span {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+
+.membro a {
+  font-size: 0.9rem;
+  text-decoration: underline;
+  font-weight: 500;
+}
