@@ -154,3 +154,6 @@ footer{margin-top:48px;padding:0 0 8px;color:var(--muted);font-size:.85rem;text-
   text-decoration: underline;
   font-weight: 500;
 }
+
+/* Menu com a página de Conteúdos em telas pequenas */
+@media(max-width:760px){.top{flex-wrap:wrap}.top nav{flex-wrap:wrap}}
