@@ -1,48 +1,210 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Sobre — Pato Devs</title>
-<meta name="description" content="Uma comunidade de desenvolvedores para compartilhar conhecimento, conectar ideias e construir projetos juntos.">
-<link rel="icon" href="../assets/img/favicon.png">
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Sobre — Pato Devs</title>
+  <meta name="description" content="Uma comunidade de desenvolvedores para compartilhar conhecimento, conectar ideias e construir projetos juntos.">
+  <link rel="icon" href="../assets/img/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <style>
+    .top { position: relative; }
+    .top .menu-toggle { display: none; }
+
+    @media (max-width: 560px) {
+      .top .menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 44px;
+        width: 44px;
+        height: 44px;
+        margin-left: auto;
+        padding: 0;
+        border: 2px solid var(--line);
+        border-radius: 12px;
+        background: var(--bg);
+        color: var(--ink);
+        font: 24px/1 system-ui, sans-serif;
+        cursor: pointer;
+      }
+
+      .top nav.site-menu {
+        position: absolute;
+        top: calc(100% + 12px);
+        right: 0;
+        left: 0;
+        z-index: 50;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        gap: 4px;
+        padding: 8px;
+        border: 2px solid var(--line);
+        border-radius: 16px;
+        background: var(--bg);
+        box-shadow: 0 12px 24px rgb(0 0 0 / 12%);
+      }
+
+      .top nav.site-menu:not(.is-open) {
+        display: none;
+      }
+
+      .top nav.site-menu a {
+        display: flex;
+        justify-content: flex-start;
+        flex: none;
+        width: 100%;
+        min-height: 44px;
+        padding: 10px 14px;
+        border-radius: 10px;
+        text-align: left;
+      }
+    }
+  </style>
 </head>
 <body>
-<div class="page">
-<div class="first">
-<header class="top">
-  <a href="../index.html" aria-label="Pato Devs, página inicial"><img class="l" src="../assets/img/logo-horizontal-preto.png" alt="Pato Devs"><img class="d" src="../assets/img/logo-horizontal-branco.png" alt="Pato Devs"></a>
-  <nav aria-label="Principal"><a href="../index.html">Início</a><a href="conteudos.html">Conteúdos</a><a href="sobre.html" aria-current="page">Sobre</a></nav>
-</header>
-<main class="sobre">
-  <h1>Quem somos.</h1>
-  <p class="lead">O Pato Devs é uma comunidade de desenvolvedores para compartilhar conhecimento, conectar ideias e construir projetos juntos. Aqui, quem está começando e quem já tem estrada nadam no mesmo lago: perguntar é normal, errar faz parte e ninguém precisa programar sozinho.</p>
+  <div class="page">
+    <div class="first">
+      <header class="top">
+        <a href="../index.html" aria-label="Pato Devs, página inicial">
+          <img class="l" src="../assets/img/logo-horizontal-preto.png" alt="Pato Devs">
+          <img class="d" src="../assets/img/logo-horizontal-branco.png" alt="Pato Devs">
+        </a>
 
-  <h2>O que fazemos</h2>
-  <ul class="pilares">
-    <li><b>Compartilhar conhecimento</b><span>Ensine o que você sabe e aprenda com quem já passou pelo mesmo problema. Dúvidas viram conversas, e conversas viram material para todo mundo: dicas, tutoriais e revisão de código entre colegas.</span></li>
-    <li><b>Conectar ideias</b><span>Troque experiências com outras pessoas que programam e descubra novos caminhos: outras linguagens, outras áreas, outras formas de resolver o mesmo problema. Tem conversa entre iniciantes e veteranos, encontros e relatos de carreira.</span></li>
-    <li><b>Construir projetos juntos</b><span>Encontre gente para tirar a ideia do papel e colocar no ar. Do primeiro commit ao deploy, você tem com quem dividir tarefas e decisões, e ainda monta portfólio com código de verdade.</span></li>
-  </ul>
-</main>
-</div>
+        <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="site-menu">
+          <span aria-hidden="true">☰</span>
+        </button>
 
-<section class="sobre" id="equipe" aria-labelledby="equipe-titulo">
-  <h2 id="equipe-titulo">Nossa Equipe</h2>
-  <p class="intro">Por trás do Pato Devs tem gente de verdade, cada pessoa cuidando de uma parte da comunidade. Todas estão abertas para conversar: é só chamar.</p>
-  <ul class="equipe">
-    <li class="membro"><div class="foto"><img src="../assets/img/matheus.jpg" alt="Matheus Fraga"></div><b>Matheus Fraga</b><span>Fundador(a)</span><a href="https://github.com/matheusfrdev" target="_blank" rel="noopener">GitHub</a></li>
-    <li class="membro"><div class="foto"><img src="../assets/img/joao.jpg" alt="João Freire"></div><b>João Freire</b><span>Diretor(a) Criativo</span><a href="https://github.com/JoaoFreireDev" target="_blank" rel="noopener">GitHub</a></li>
-    <li class="membro"><div class="foto"><img src="../assets/img/enael.png" alt="Enael Rocha"></div><b>Enael Rocha</b><span>Diretor(a) de Operações</span><a href="https://github.com/EnaelRocha" target="_blank" rel="noopener">GitHub</a></li>
-    <li class="membro"><div class="foto"><img src="../assets/img/marco.jpg" alt="Marco Moura"></div><b>Marco Moura</b><span>Desenvolvedor Full Stack</span><a href="https://github.com/MarcoMoura1209" target="_blank" rel="noopener">GitHub</a></li>
-  </ul>
+        <nav id="site-menu" class="site-menu" aria-label="Principal">
+          <a href="../index.html">Início</a>
+          <a href="conteudos.html">Conteúdos</a>
+          <a href="sobre.html" aria-current="page">Sobre</a>
+        </nav>
+      </header>
 
-  <div class="fim"><div><b>Pronto para entrar no lago?</b><p>Venha como está, com uma dúvida ou com uma ideia. O resto a gente constrói junto.</p></div><a class="cta" href="https://discord.gg/9tGbJGCNey">Entrar na comunidade</a></div>
-</section>
-<footer>© 2026 Pato Devs</footer>
-</div>
-<a class="gh" href="https://github.com/PatoDevs" target="_blank" rel="noopener" aria-label="Pato Devs no GitHub"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg><span>Nosso GitHub</span></a>
+      <main class="sobre">
+        <h1>Quem somos.</h1>
+        <p class="lead">O Pato Devs é uma comunidade de desenvolvedores para compartilhar conhecimento, conectar ideias e construir projetos juntos. Aqui, quem está começando e quem já tem estrada nadam no mesmo lago: perguntar é normal, errar faz parte e ninguém precisa programar sozinho.</p>
+
+        <h2>O que fazemos</h2>
+        <ul class="pilares">
+          <li>
+            <b>Compartilhar conhecimento</b>
+            <span>Ensine o que você sabe e aprenda com quem já passou pelo mesmo problema. Dúvidas viram conversas, e conversas viram material para todo mundo: dicas, tutoriais e revisão de código entre colegas.</span>
+          </li>
+          <li>
+            <b>Conectar ideias</b>
+            <span>Troque experiências com outras pessoas que programam e descubra novos caminhos: outras linguagens, outras áreas, outras formas de resolver o mesmo problema. Tem conversa entre iniciantes e veteranos, encontros e relatos de carreira.</span>
+          </li>
+          <li>
+            <b>Construir projetos juntos</b>
+            <span>Encontre gente para tirar a ideia do papel e colocar no ar. Do primeiro commit ao deploy, você tem com quem dividir tarefas e decisões, e ainda monta portfólio com código de verdade.</span>
+          </li>
+        </ul>
+      </main>
+    </div>
+
+    <section class="sobre" id="equipe" aria-labelledby="equipe-titulo">
+      <h2 id="equipe-titulo">Nossa Equipe</h2>
+      <p class="intro">Por trás do Pato Devs tem gente de verdade, cada pessoa cuidando de uma parte da comunidade. Todas estão abertas para conversar: é só chamar.</p>
+
+      <ul class="equipe">
+        <li class="membro">
+          <div class="foto">
+            <img src="../assets/img/matheus.jpg" alt="Matheus Fraga">
+          </div>
+          <b>Matheus Fraga</b>
+          <span>Fundador(a)</span>
+          <a href="https://github.com/matheusfrdev" target="_blank" rel="noopener">GitHub</a>
+        </li>
+
+        <li class="membro">
+          <div class="foto">
+            <img src="../assets/img/joao.jpg" alt="João Freire">
+          </div>
+          <b>João Freire</b>
+          <span>Diretor(a) Criativo</span>
+          <a href="https://github.com/JoaoFreireDev" target="_blank" rel="noopener">GitHub</a>
+        </li>
+
+        <li class="membro">
+          <div class="foto">
+            <img src="../assets/img/enael.png" alt="Enael Rocha">
+          </div>
+          <b>Enael Rocha</b>
+          <span>Diretor(a) de Operações</span>
+          <a href="https://github.com/EnaelRocha" target="_blank" rel="noopener">GitHub</a>
+        </li>
+
+        <li class="membro">
+          <div class="foto">
+            <img src="../assets/img/marco.jpg" alt="Marco Moura">
+          </div>
+          <b>Marco Moura</b>
+          <span>Desenvolvedor Full Stack</span>
+          <a href="https://github.com/MarcoMoura1209" target="_blank" rel="noopener">GitHub</a>
+        </li>
+      </ul>
+
+      <div class="fim">
+        <div>
+          <b>Pronto para entrar no lago?</b>
+          <p>Venha como está, com uma dúvida ou com uma ideia. O resto a gente constrói junto.</p>
+        </div>
+        <a class="cta" href="https://discord.gg/9tGbJGCNey">Entrar na comunidade</a>
+      </div>
+    </section>
+
+    <footer>© 2026 Pato Devs</footer>
+  </div>
+
+  <a class="gh" href="https://github.com/PatoDevs" target="_blank" rel="noopener" aria-label="Pato Devs no GitHub">
+    <svg viewBox="0 0 16 16" aria-hidden="true">
+      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.6 7.6 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+    </svg>
+    <span>Nosso GitHub</span>
+  </a>
+
+  <script>
+    (() => {
+      const button = document.querySelector(".menu-toggle");
+      const menu = document.querySelector("#site-menu");
+
+      function setOpen(open) {
+        menu.classList.toggle("is-open", open);
+        button.setAttribute("aria-expanded", String(open));
+        button.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
+        button.querySelector("span").textContent = open ? "×" : "☰";
+      }
+
+      button.addEventListener("click", () => {
+        setOpen(button.getAttribute("aria-expanded") !== "true");
+      });
+
+      document.addEventListener("click", (event) => {
+        if (!menu.contains(event.target) && !button.contains(event.target)) {
+          setOpen(false);
+        }
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && button.getAttribute("aria-expanded") === "true") {
+          setOpen(false);
+          button.focus();
+        }
+      });
+
+      menu.addEventListener("click", (event) => {
+        if (event.target.closest("a")) setOpen(false);
+      });
+
+      window.matchMedia("(max-width: 560px)")
+        .addEventListener("change", () => setOpen(false));
+    })();
+  </script>
 </body>
 </html>
